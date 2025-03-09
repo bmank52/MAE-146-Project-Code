@@ -1,0 +1,14 @@
+%MAE 146 Launch Trajectory - Bryce Mankovsky 3/8/25
+clc;
+clear;
+
+mu_E = 3.986e14; %m^3/s^2
+launchLat = 28.6; %keneddy latitude in degrees
+initalOrbitR = 7e6; %m
+initalOrbitV = sqrt(mu_E/initalOrbitR); %m/s
+launchAzAngle = 35; %35-120 degrees
+initalOrbitInclincation = acosd(sind(launchAzAngle)*cosd(launchLat)) %degrees
+
+%enter an equitorial orbit i = 0  using a simple plane change
+dvParkingOrbit = 2 * initalOrbitV * sind(initalOrbitInclincation/2)
+
