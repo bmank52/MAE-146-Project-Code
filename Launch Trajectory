@@ -5,7 +5,7 @@ clear;
 mu_E = 3.986e14; %m^3/s^2
 launchLat = 28.6; %keneddy latitude in degrees
 ecliptic = 23.5; %degrees
-initalOrbitR = 6678; %m 300km alt
+initalOrbitR = 6678000; %m 300km alt
 initalOrbitV = sqrt(mu_E/initalOrbitR) %m/s
 launchAzAngle = 90; %35-120 degrees    90 is east 
 initalOrbitInclincation = acosd(sind(launchAzAngle)*cosd(launchLat)) %degrees
