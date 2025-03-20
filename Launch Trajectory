@@ -4,11 +4,13 @@ clear;
 
 mu_E = 3.986e14; %m^3/s^2
 launchLat = 28.6; %keneddy latitude in degrees
-initalOrbitR = 7e6; %m
-initalOrbitV = sqrt(mu_E/initalOrbitR); %m/s
-launchAzAngle = 35; %35-120 degrees
+ecliptic = 23.5; %degrees
+initalOrbitR = 6678; %m 300km alt
+initalOrbitV = sqrt(mu_E/initalOrbitR) %m/s
+launchAzAngle = 90; %35-120 degrees    90 is east 
 initalOrbitInclincation = acosd(sind(launchAzAngle)*cosd(launchLat)) %degrees
 
 %enter an equitorial orbit i = 0  using a simple plane change
-dvParkingOrbit = 2 * initalOrbitV * sind(initalOrbitInclincation/2)
+
+dvParkingOrbit = 2 * initalOrbitV * sind((initalOrbitInclincation-ecliptic)/2)
 
